@@ -14,7 +14,7 @@ The script uses paths relative to the repository, so it should run after a fresh
 Godeaux_et_al._2026/
   Code_and_data/
     FishTracker_workflow.R
-    data_raw/
+    data/
       Survey 2020/
       Survey 2023/
   README.md
@@ -56,19 +56,19 @@ If the script is launched from another folder, it will try to locate the reposit
 
 The workflow expects the raw files to stay in these folders:
 
-- `Code_and_data/data_raw/Survey 2020/`
-- `Code_and_data/data_raw/Survey 2023/`
+- `Code_and_data/data/Survey 2020/`
+- `Code_and_data/data/Survey 2023/`
 
 Important files include:
 
-- `Code_and_data/data_raw/Survey 2020/CSOT_2020-12-15_merged.txt`
-- `Code_and_data/data_raw/Survey 2020/comparaison_work_HV.txt`
-- `Code_and_data/data_raw/Survey 2020/climatik-request-3156645`
-- `Code_and_data/data_raw/Survey 2020/data_ccc_technical_note_op1_op2.txt`
-- `Code_and_data/data_raw/Survey 2023/CSOT_merged_exportTortSpee.txt`
-- `Code_and_data/data_raw/Survey 2023/data_2023_2024_S5(Last).txt`
-- `Code_and_data/data_raw/Survey 2023/data_2023_2024_combined_cleaning_manuel(Last).txt`
-- `Code_and_data/data_raw/Survey 2023/ClimatiK 12-24_12_2023/Vent_2023.txt`
+- `Code_and_data/data/Survey 2020/CSOT_2020-12-15_merged.txt`
+- `Code_and_data/data/Survey 2020/comparaison_work_HV.txt`
+- `Code_and_data/data/Survey 2020/climatik-request-3156645`
+- `Code_and_data/data/Survey 2020/data_ccc_technical_note_op1_op2.txt`
+- `Code_and_data/data/Survey 2023/CSOT_merged_exportTortSpee.txt`
+- `Code_and_data/data/Survey 2023/data_2023_2024_S5(Last).txt`
+- `Code_and_data/data/Survey 2023/data_2023_2024_combined_cleaning_manuel(Last).txt`
+- `Code_and_data/data/Survey 2023/ClimatiK 12-24_12_2023/Vent_2023.txt`
 
 If one of these files is missing, the script stops with a clear error message.
 
@@ -88,7 +88,7 @@ If you clone this repository and need the contents of `Subset.zip`, make sure Gi
 
 ## Notes
 
-- The script uses relative paths, so avoid moving the `Code_and_data/data_raw/` folder unless you also update the script.
+- The script uses relative paths, so avoid moving the `Code_and_data/data/` folder unless you also update the script.
 - If you rename one of the raw files, update the corresponding path in `FishTracker_workflow.R`.
 - The workflow processes both seasons:
   - 2020-2021
@@ -99,3 +99,4 @@ If you clone this repository and need the contents of `Subset.zip`, make sure Gi
 - **Missing package**: rerun the script and let it install the required package.
 - **File not found**: check that the raw data folders and filenames match the structure above.
 - **No output created**: make sure the script finished without an error and that the `Outputs/` folder is writable.
+
