@@ -1,2 +1,2 @@
-Subset.zip filter=lfs diff=lfs merge=lfs -text
+*.zip filter=lfs diff=lfs merge=lfs -text
 Subset.zip !text !filter !merge !diff

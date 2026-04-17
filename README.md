@@ -6,8 +6,6 @@ The main entry point is:
 
 - `Code_and_data/FishTracker_workflow.R`
 
-The script uses paths relative to the repository, so it should run after a fresh clone without manually editing file paths.
-
 ## Repository layout
 
 ```text
@@ -18,7 +16,6 @@ Godeaux_et_al._2026/
       Survey 2020/
       Survey 2023/
   README.md
-  .gitattributes
   Subset.zip
 ```
 
@@ -53,68 +50,6 @@ From the repository root, run the script in R.
 
 If the script is launched from another folder, it will try to locate the repository automatically.
 
-## Getting the files
-
-There are two ways to use this repository.
-
-### Option 1: easiest download from GitHub
-
-If GitHub is configured to include Git LFS objects in archives, the simplest method is:
-
-1. Open the repository page on GitHub.
-2. Click `Code`.
-3. Click `Download ZIP`.
-4. Unzip the downloaded folder on your computer.
-5. Check that `Subset.zip` is present in the repository folder.
-6. If needed, unzip `Subset.zip` before running the analysis.
-
-### Option 2: clone the repository with Git and Git LFS
-
-Use this option if you want to be sure the large file is downloaded correctly.
-
-#### On Windows
-
-Open **PowerShell** or **Git Bash**.
-
-#### On macOS or Linux
-
-Open the **Terminal**.
-
-Then run:
-
-```bash
-git clone https://github.com/GQxD/Godeaux_et_al._2026.git
-cd Godeaux_et_al._2026
-git lfs install
-git lfs pull
-```
-
-After that:
-
-1. Check that `Subset.zip` is present in the repository folder.
-2. If needed, unzip `Subset.zip` before running the analysis.
-
-Useful check:
-
-```bash
-git lfs ls-files
-```
-
-This lists the files tracked by Git LFS in the repository.
-
-## Can the GitHub ZIP include `Subset.zip`?
-
-Yes. GitHub can be configured so that source-code archives include Git LFS objects instead of only pointer files.
-
-To enable that setting, a repository administrator can go to:
-
-1. The GitHub repository page
-2. `Settings`
-3. `Archives`
-4. Turn on `Include Git LFS objects in archives`
-
-When that option is enabled, the `Download ZIP` archive can include the real Git LFS file contents.
-
 ## Input data
 
 The workflow expects the raw files to stay in these folders:
@@ -142,12 +77,6 @@ Figures are written to:
 - `Outputs/`
 
 The folder is created automatically if it does not already exist.
-
-## Large file note
-
-`Subset.zip` is stored with Git LFS because it is larger than the standard GitHub file limit for normal Git objects.
-
-Git LFS keeps a small pointer in the repository and stores the real file separately. That is why the archive has to be pulled after cloning if Git LFS is not already included in the download.
 
 ## Notes
 
