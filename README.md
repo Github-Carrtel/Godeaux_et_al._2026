@@ -1,6 +1,6 @@
-﻿# FishTracker Workflow
+﻿# Workflow
 
-This repository contains the R workflow used for the comparative evaluation of two automated fish counting software tools using acoustic camera data (Godeaux et al., 2026), together with the associated statistics and figures.
+This repository contains the R workflow used for the comparative evaluation of two automated fish counting software tools using acoustic camera data (Godeaux et al., 2026), along with the associated statistics and figures.
 
 The main entry point is:
 
