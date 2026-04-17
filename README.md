@@ -70,6 +70,10 @@ Important files include:
 
 If one of these files is missing, the script stops with a clear error message.
 
+## Subset availability
+
+The subset can be found in the repository’s releases section under the name “Subset – Version 1.0”.
+
 ## Outputs
 
 Figures are written to:
