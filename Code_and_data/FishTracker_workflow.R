@@ -1,9 +1,9 @@
-# =========================================================='
+﻿# =========================================================='
 # Title
 # Authors  
 # =========================================================='
 # Purpose: Core analysis 
-# Structure: Libraries → Data Loading → Analysis → Export
+# Structure: Libraries â†’ Data Loading â†’ Analysis â†’ Export
 # Both seasons analyzed: 2020-2021 and 2023-2024
 # April 2026 
 # =========================================================='
@@ -53,19 +53,19 @@ locate_repo_root <- function() {
 
   for (candidate in unique(candidates)) {
     candidate <- normalizePath(candidate, winslash = "/", mustWork = FALSE)
-    if (dir.exists(file.path(candidate, "Code_and_data", "data_raw"))) {
+    if (dir.exists(file.path(candidate, "Code_and_data", "data"))) {
       return(candidate)
     }
-    if (basename(candidate) == "Code_and_data" && dir.exists(file.path(candidate, "data_raw"))) {
+    if (basename(candidate) == "Code_and_data" && dir.exists(file.path(candidate, "data"))) {
       return(normalizePath(file.path(candidate, ".."), winslash = "/", mustWork = FALSE))
     }
   }
 
-  stop("Could not locate the repo root. Expected a Code_and_data/data_raw folder.")
+  stop("Could not locate the repo root. Expected a Code_and_data/data folder.")
 }
 
 repo_root <- locate_repo_root()
-data_root <- file.path(repo_root, "Code_and_data", "data_raw")
+data_root <- file.path(repo_root, "Code_and_data", "data")
 season_root_2020 <- file.path(data_root, "Survey 2020")
 season_root_2023 <- file.path(data_root, "Survey 2023")
 
@@ -159,7 +159,7 @@ combined_2020_december <- combined_2020 %>%
   filter(DateTime >= as.POSIXct("2020-12-15") & 
          DateTime <= as.POSIXct("2020-12-23 23:59:59"))
 
-cat("\n─── 2020-2021 Data Summary ───\n")
+cat("\nâ”€â”€â”€ 2020-2021 Data Summary â”€â”€â”€\n")
 cat("Total observations:", nrow(combined_2020), "\n")
 cat("December only:", nrow(combined_2020_december), "\n\n")
 
@@ -389,7 +389,7 @@ data_wind_2023 <- data_wind_2023 %>%
 # =========================================================='
 
 # Create period classification
-data_wind_2023_période <- data_wind_2023 %>%
+data_wind_2023_pÃ©riode <- data_wind_2023 %>%
   mutate(PERIODE = case_when(
     JOUR >= 12 & JOUR <= 18 ~ "Period1 (12-18 Dec)",
     JOUR >= 19 & JOUR <= 23 ~ "Period2 (19-23 Dec)",
@@ -398,7 +398,7 @@ data_wind_2023_période <- data_wind_2023 %>%
   filter(!is.na(PERIODE))
 
 # Descriptive statistics by period
-wind_stats <- data_wind_2023_période %>%
+wind_stats <- data_wind_2023_pÃ©riode %>%
   group_by(PERIODE) %>%
   summarise(
     Observations = n(),
@@ -414,7 +414,7 @@ wind_stats <- data_wind_2023_période %>%
   )
 
 print(wind_stats) # Wind statistics 2023-2024
-cat("\n─── 2023-2024 Data Summary ───\n")
+cat("\nâ”€â”€â”€ 2023-2024 Data Summary â”€â”€â”€\n")
 cat("Total observations:", nrow(combined_2023), "\n\n")
 
 # =========================================================='
@@ -471,14 +471,14 @@ combined_fish_2023  <- p_ccc_fish_2023 | p_ba_fish_2023
 ## SECTION 7: DISPLAY ALL PLOTS                         ####
 # =========================================================='
 
-cat("─── 2020-2021 TIME SERIES ───\n")
+cat("â”€â”€â”€ 2020-2021 TIME SERIES â”€â”€â”€\n")
 cat("Plot 1: Wind Overlay (Dec 2020)\n")
 print(p_wind_2020)
 
 cat("\nPlot 2: Day/Night Pattern (2020)\n")
 print(p_daynight_2020)
 
-cat("\n─── 2020-2021 AGREEMENT ANALYSIS ───\n")
+cat("\nâ”€â”€â”€ 2020-2021 AGREEMENT ANALYSIS â”€â”€â”€\n")
 cat("Plot 3: CCC - Sonar5 vs Operator1 (2020)\n")
 print(p_ccc_sonar_2020)
 
@@ -497,11 +497,11 @@ print(combined_sonar_2020)
 cat("\nPlot 8: Combined CCC + Bland-Altman - FishTracker (2020)\n")
 print(combined_fish_2020)
 
-cat("\n─── 2023-2024 TIME SERIES ───\n")
+cat("\nâ”€â”€â”€ 2023-2024 TIME SERIES â”€â”€â”€\n")
 cat("Plot 9: Wind Overlay (Dec 2023)\n")
 print(p_wind_2023)
 
-cat("\n─── 2023-2024 AGREEMENT ANALYSIS ───\n")
+cat("\nâ”€â”€â”€ 2023-2024 AGREEMENT ANALYSIS â”€â”€â”€\n")
 cat("Plot 10: CCC - Sonar5 vs Operator1 (2023)\n")
 print(p_ccc_sonar_2023)
 
@@ -520,7 +520,7 @@ print(combined_sonar_2023)
 cat("\nPlot 15: Combined CCC + Bland-Altman - FishTracker (2023)\n")
 print(combined_fish_2023)
 
-cat("\n─── OPERATOR AGREEMENT ───\n")
+cat("\nâ”€â”€â”€ OPERATOR AGREEMENT â”€â”€â”€\n")
 cat("Plot 16: CCC - Operator1 vs Operator2\n")
 print(p_ccc_op)
 
@@ -540,77 +540,77 @@ if (!dir.exists(output_dir)) dir.create(output_dir, recursive = TRUE)
 # 2020-2021 Exports
 ggsave("01_Wind_Overlay_December_2020.png", plot = p_wind_2020,
        path = output_dir, width = 13, height = 7, dpi = 300)
-cat("✓ 01_Wind_Overlay_December_2020.png\n")
+cat("âœ“ 01_Wind_Overlay_December_2020.png\n")
 
 ggsave("02_DayNight_Pattern_2020.png", plot = p_daynight_2020,
        path = output_dir, width = 12, height = 6, dpi = 300)
-cat("✓ 02_DayNight_Pattern_2020.png\n")
+cat("âœ“ 02_DayNight_Pattern_2020.png\n")
 
 ggsave("03_CCC_Sonar5_2020.png", plot = p_ccc_sonar_2020,
        path = output_dir, width = 7, height = 7, dpi = 300)
-cat("✓ 03_CCC_Sonar5_2020.png\n")
+cat("âœ“ 03_CCC_Sonar5_2020.png\n")
 
 ggsave("04_CCC_FishTracker_2020.png", plot = p_ccc_fish_2020,
        path = output_dir, width = 7, height = 7, dpi = 300)
-cat("✓ 04_CCC_FishTracker_2020.png\n")
+cat("âœ“ 04_CCC_FishTracker_2020.png\n")
 
 ggsave("05_BA_Sonar5_2020.png", plot = p_ba_sonar_2020,
        path = output_dir, width = 8, height = 7, dpi = 300)
-cat("✓ 05_BA_Sonar5_2020.png\n")
+cat("âœ“ 05_BA_Sonar5_2020.png\n")
 
 ggsave("06_BA_FishTracker_2020.png", plot = p_ba_fish_2020,
        path = output_dir, width = 8, height = 7, dpi = 300)
-cat("✓ 06_BA_FishTracker_2020.png\n")
+cat("âœ“ 06_BA_FishTracker_2020.png\n")
 
 ggsave("07_Combined_Sonar5_2020.png", plot = combined_sonar_2020,
        path = output_dir, width = 14, height = 6, dpi = 300)
-cat("✓ 07_Combined_Sonar5_2020.png\n")
+cat("âœ“ 07_Combined_Sonar5_2020.png\n")
 
 ggsave("08_Combined_FishTracker_2020.png", plot = combined_fish_2020,
        path = output_dir, width = 14, height = 6, dpi = 300)
-cat("✓ 08_Combined_FishTracker_2020.png\n")
+cat("âœ“ 08_Combined_FishTracker_2020.png\n")
 
 # 2023-2024 Exports
 ggsave("09_Wind_Overlay_December_2023.png", plot = p_wind_2023,
        path = output_dir, width = 13, height = 7, dpi = 300)
-cat("✓ 09_Wind_Overlay_December_2023.png\n")
+cat("âœ“ 09_Wind_Overlay_December_2023.png\n")
 
 ggsave("10_CCC_Sonar5_2023.png", plot = p_ccc_sonar_2023,
        path = output_dir, width = 7, height = 7, dpi = 300)
-cat("✓ 10_CCC_Sonar5_2023.png\n")
+cat("âœ“ 10_CCC_Sonar5_2023.png\n")
 
 ggsave("11_CCC_FishTracker_2023.png", plot = p_ccc_fish_2023,
        path = output_dir, width = 7, height = 7, dpi = 300)
-cat("✓ 11_CCC_FishTracker_2023.png\n")
+cat("âœ“ 11_CCC_FishTracker_2023.png\n")
 
 ggsave("12_BA_Sonar5_2023.png", plot = p_ba_sonar_2023,
        path = output_dir, width = 8, height = 7, dpi = 300)
-cat("✓ 12_BA_Sonar5_2023.png\n")
+cat("âœ“ 12_BA_Sonar5_2023.png\n")
 
 ggsave("13_BA_FishTracker_2023.png", plot = p_ba_fish_2023,
        path = output_dir, width = 8, height = 7, dpi = 300)
-cat("✓ 13_BA_FishTracker_2023.png\n")
+cat("âœ“ 13_BA_FishTracker_2023.png\n")
 
 ggsave("14_Combined_Sonar5_2023.png", plot = combined_sonar_2023,
        path = output_dir, width = 14, height = 6, dpi = 300)
-cat("✓ 14_Combined_Sonar5_2023.png\n")
+cat("âœ“ 14_Combined_Sonar5_2023.png\n")
 
 ggsave("15_Combined_FishTracker_2023.png", plot = combined_fish_2023,
        path = output_dir, width = 14, height = 6, dpi = 300)
-cat("✓ 15_Combined_FishTracker_2023.png\n")
+cat("âœ“ 15_Combined_FishTracker_2023.png\n")
 
 # Operator Agreement Exports
 ggsave("16_CCC_Operator1_vs_Operator2.png", plot = p_ccc_op,
        path = output_dir, width = 7, height = 7, dpi = 300)
-cat("✓ 16_CCC_Operator1_vs_Operator2.png\n")
+cat("âœ“ 16_CCC_Operator1_vs_Operator2.png\n")
 
 ggsave("17_BA_Operator1_vs_Operator2.png", plot = p_ba_op,
        path = output_dir, width = 8, height = 7, dpi = 300)
-cat("✓ 17_BA_Operator1_vs_Operator2.png\n")
+cat("âœ“ 17_BA_Operator1_vs_Operator2.png\n")
 
 ggsave("18_Combined_Operator_Agreement.png", plot = combined_op,
        path = output_dir, width = 14, height = 6, dpi = 300)
-cat("✓ 18_Combined_Operator_Agreement.png\n")
+cat("âœ“ 18_Combined_Operator_Agreement.png\n")
 
 # =========================================================='
 ## SECTION 9: WIND ANALYSIS - 2023-2024                 ####
@@ -658,11 +658,11 @@ if (length(wind_full_2023_candidates) > 0) {
       .groups = "drop"
     )
   
-  cat("\n─── Wind Statistics by Period ───\n")
+  cat("\nâ”€â”€â”€ Wind Statistics by Period â”€â”€â”€\n")
   print(wind_stats)
   
   # Create windrose plots for selected days
-  cat("\n─── Generating Windrose Plots by Day ───\n")
+  cat("\nâ”€â”€â”€ Generating Windrose Plots by Day â”€â”€â”€\n")
   
   # Create plot with facets by day (will display in console)
   p_windrose_days <- windRose(
@@ -678,7 +678,7 @@ if (length(wind_full_2023_candidates) > 0) {
     main = "Wind directions by day (2023: Days 15,16,17,20,21,22)"
   )
   
-  cat("✓ Windrose by day generated\n")
+  cat("âœ“ Windrose by day generated\n")
   
   # Create overall windrose plot
   p_windrose_overall <- windRose(
@@ -694,10 +694,10 @@ if (length(wind_full_2023_candidates) > 0) {
     main = "2023: Frequency of wind direction (%)"
   )
   
-  cat("✓ Overall windrose plot generated\n\n")
+  cat("âœ“ Overall windrose plot generated\n\n")
   
 } else {
-  cat("\n⚠ Warning: Full wind data file (with GVX column) not found.\n")
+  cat("\nâš  Warning: Full wind data file (with GVX column) not found.\n")
   cat("  Skipping detailed windrose analysis.\n")
   cat("  Expected: *Vent*2023*.csv in season folder\n\n")
 }
@@ -707,22 +707,24 @@ if (length(wind_full_2023_candidates) > 0) {
 # =========================================================='
 
 # CONCORDANCE CORRELATION COEFFICIENTS
-cat("─── 2020-2021 SEASON ───\n")
+cat("â”€â”€â”€ 2020-2021 SEASON â”€â”€â”€\n")
 cat("Sonar5 vs Operator1:\n")
 print(ccc_sonar_2020$rho.c)
 cat("\nFishTracker vs Operator1:\n")
 print(ccc_fishtracker_2020$rho.c)
 
-cat("\n─── 2023-2024 SEASON ───\n")
+cat("\nâ”€â”€â”€ 2023-2024 SEASON â”€â”€â”€\n")
 cat("Sonar5 vs Operator1:\n")
 print(ccc_sonar_2023$rho.c)
 cat("\nFishTracker vs Operator1:\n")
 print(ccc_fishtracker_2023$rho.c)
 
-cat("\n─── OPERATOR AGREEMENT ───\n")
+cat("\nâ”€â”€â”€ OPERATOR AGREEMENT â”€â”€â”€\n")
 cat("Operator1 vs Operator2:\n")
 print(ccc_OP$rho.c)
 
 # =========================================================='
 # END OF SCRIPT
 # =========================================================='
+
+
