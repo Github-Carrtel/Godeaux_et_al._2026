@@ -55,29 +55,32 @@ If the script is launched from another folder, it will try to locate the reposit
 
 ## Getting the files
 
-There are two different ways to use this repository.
+There are two ways to use this repository.
 
-### Option 1: code only
+### Option 1: easiest download from GitHub
 
-If someone only wants to read the code, they can use GitHub's regular download button:
+If GitHub is configured to include Git LFS objects in archives, the simplest method is:
 
 1. Open the repository page on GitHub.
 2. Click `Code`.
 3. Click `Download ZIP`.
-4. Unzip the folder on the computer.
+4. Unzip the downloaded folder on your computer.
+5. Check that `Subset.zip` is present in the repository folder.
+6. If needed, unzip `Subset.zip` before running the analysis.
 
-This is enough to get the R script and the documentation.
+### Option 2: clone the repository with Git and Git LFS
 
-### Option 2: full repository with `Subset.zip`
+Use this option if you want to be sure the large file is downloaded correctly.
 
-`Subset.zip` is a large file stored with Git LFS. That means it is not a normal file inside GitHub's main storage.
+#### On Windows
 
-For the full repository, the safest method is to clone it with Git and Git LFS:
+Open **PowerShell** or **Git Bash**.
 
-1. Install Git.
-2. Install Git LFS.
-3. Open a terminal.
-4. Run:
+#### On macOS or Linux
+
+Open the **Terminal**.
+
+Then run:
 
 ```bash
 git clone https://github.com/GQxD/Godeaux_et_al._2026.git
@@ -86,14 +89,31 @@ git lfs install
 git lfs pull
 ```
 
-5. Check that `Subset.zip` is present in the repository folder.
-6. If needed, unzip `Subset.zip` before running the analysis.
+After that:
 
-Important:
+1. Check that `Subset.zip` is present in the repository folder.
+2. If needed, unzip `Subset.zip` before running the analysis.
 
-- If Git LFS is not installed, `Subset.zip` may appear as a small pointer file instead of the real archive.
-- By default, GitHub source-code ZIP downloads do not include Git LFS objects unless the repository is configured to include them in archives.
-- If a user is not comfortable with the command line, the easiest solution is usually to ask someone to install Git LFS once and clone the repository for them.
+Useful check:
+
+```bash
+git lfs ls-files
+```
+
+This lists the files tracked by Git LFS in the repository.
+
+## Can the GitHub ZIP include `Subset.zip`?
+
+Yes. GitHub can be configured so that source-code archives include Git LFS objects instead of only pointer files.
+
+To enable that setting, a repository administrator can go to:
+
+1. The GitHub repository page
+2. `Settings`
+3. `Archives`
+4. Turn on `Include Git LFS objects in archives`
+
+When that option is enabled, the `Download ZIP` archive can include the real Git LFS file contents.
 
 ## Input data
 
@@ -127,7 +147,7 @@ The folder is created automatically if it does not already exist.
 
 `Subset.zip` is stored with Git LFS because it is larger than the standard GitHub file limit for normal Git objects.
 
-Git LFS keeps a small pointer in the repository and stores the real file separately. That is why the archive has to be pulled after cloning.
+Git LFS keeps a small pointer in the repository and stores the real file separately. That is why the archive has to be pulled after cloning if Git LFS is not already included in the download.
 
 ## Notes
 
