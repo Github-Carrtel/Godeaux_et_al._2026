@@ -18,6 +18,7 @@ Godeaux_et_al._2026/
       Survey 2020/
       Survey 2023/
   README.md
+  .gitattributes
   Subset.zip
 ```
 
@@ -52,6 +53,48 @@ From the repository root, run the script in R.
 
 If the script is launched from another folder, it will try to locate the repository automatically.
 
+## Getting the files
+
+There are two different ways to use this repository.
+
+### Option 1: code only
+
+If someone only wants to read the code, they can use GitHub's regular download button:
+
+1. Open the repository page on GitHub.
+2. Click `Code`.
+3. Click `Download ZIP`.
+4. Unzip the folder on the computer.
+
+This is enough to get the R script and the documentation.
+
+### Option 2: full repository with `Subset.zip`
+
+`Subset.zip` is a large file stored with Git LFS. That means it is not a normal file inside GitHub's main storage.
+
+For the full repository, the safest method is to clone it with Git and Git LFS:
+
+1. Install Git.
+2. Install Git LFS.
+3. Open a terminal.
+4. Run:
+
+```bash
+git clone https://github.com/GQxD/Godeaux_et_al._2026.git
+cd Godeaux_et_al._2026
+git lfs install
+git lfs pull
+```
+
+5. Check that `Subset.zip` is present in the repository folder.
+6. If needed, unzip `Subset.zip` before running the analysis.
+
+Important:
+
+- If Git LFS is not installed, `Subset.zip` may appear as a small pointer file instead of the real archive.
+- By default, GitHub source-code ZIP downloads do not include Git LFS objects unless the repository is configured to include them in archives.
+- If a user is not comfortable with the command line, the easiest solution is usually to ask someone to install Git LFS once and clone the repository for them.
+
 ## Input data
 
 The workflow expects the raw files to stay in these folders:
@@ -84,7 +127,7 @@ The folder is created automatically if it does not already exist.
 
 `Subset.zip` is stored with Git LFS because it is larger than the standard GitHub file limit for normal Git objects.
 
-If you clone this repository and need the contents of `Subset.zip`, make sure Git LFS is installed on your machine.
+Git LFS keeps a small pointer in the repository and stores the real file separately. That is why the archive has to be pulled after cloning.
 
 ## Notes
 
@@ -99,4 +142,3 @@ If you clone this repository and need the contents of `Subset.zip`, make sure Gi
 - **Missing package**: rerun the script and let it install the required package.
 - **File not found**: check that the raw data folders and filenames match the structure above.
 - **No output created**: make sure the script finished without an error and that the `Outputs/` folder is writable.
-
