@@ -70,10 +70,6 @@ Important files include:
 
 If one of these files is missing, the script stops with a clear error message.
 
-## Subset availability
-
-The subset can be found in the repository’s releases section under the name “Subset – Version 1.0”.
-
 ## Outputs
 
 Figures are written to:
@@ -95,3 +91,7 @@ The folder is created automatically if it does not already exist.
 - **Missing package**: rerun the script and let it install the required package.
 - **File not found**: check that the raw data folders and filenames match the structure above.
 - **No output created**: make sure the script finished without an error and that the `Outputs/` folder is writable.
+
+## Subset availability
+
+The subset can be found in the repository’s releases section under the name “Subset – Version 1.0”.
