@@ -1,6 +1,6 @@
 ﻿# =========================================================='
-# Title
-# Authors  
+# Comparative evaluation of two automated fish counting software tools using acoustic camera data.
+# Quentin Godeaux, Hervé Rogissart, Clément Rautureau, François Martignac, Franck Cattanéo, Jean Guillard.  
 # =========================================================='
 # Purpose: Core analysis 
 # Structure: Libraries â†’ Data Loading â†’ Analysis â†’ Export
