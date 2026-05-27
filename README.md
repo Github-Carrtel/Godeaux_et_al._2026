@@ -166,7 +166,7 @@ Quentin Godeaux, Hervé Rogissart, Clément Rautureau, François Martign
 
 ### Subset availability  
 
-A reduced data set is provided in the repository’s *Releases* section under the name “Subset – Version 1.0” (file `Subset.zip`).
+A reduced data set (.aris files) is provided in the repository’s *Releases* section under the name “Subset – Version 1.0” (file `Subset.zip`).
 
 ---
 
