@@ -1,65 +1,78 @@
-# FishTracker_workflow (Godeaux et al., 2026)
+**FishTracker_workflow (Godeaux et al., 2026)**  
+*R workflow for the comparative evaluation of two automated fish‑counting software tools (FishTracker and Sonar5) using acoustic‑camera data*  [1]
 
-> R workflow for the comparative evaluation of two automated fish counting software tools (FishTracker and Sonar5) using acoustic camera data.
+---
 
-## 1. Métadonnées / Metadata
+## 1. Metadata  
 
-| Champ | Valeur |
-|-------|--------|
-| **Nom** | FishTracker_workflow |
-| **Version** | Version finale pour publication (Avril 2026) |
-| **Date** | Avril 2026 |
-| **Auteurs / Développeurs** | Quentin Godeaux, Hervé Rogissart, Clément Rautureau, François Martignac, Franck Cattanéo, Jean Guillard |
-| **Contact** | [À compléter : email de contact] |
-| **Laboratoire / Organisme responsable** | [À compléter : ex. INRAE, UMR CARRTEL] |
-| **Licence** | MIT License (Voir fichier `LICENSE`) |
-| **Site web** | [À compléter] |
-| **Code source** | [À compléter : URL du dépôt Git] |
-| **Domaine scientifique** | Hydroacoustique, Écologie aquatique, Limnologie |
-| **Fonctionnalités clés** | Traitement de données FishTracker et Sonar5, Analyse de concordance (CCC), Graphes de Bland-Altman, Analyse de données de vent |
+| Field | Value |
+|-------|-------|
+| **Name** | FishTracker_workflow |
+| **Version** | Final version for publication (April 2026) |
+| **Date** | April 2026 |
+| **Authors / Developers** | Quentin Godeaux, Hervé Rogissart, Clément Rautureau, François Martignac, Franck Cattanéo, Jean Guillard |
+| **Contact** | Clément Rautureau at clement.rautureau@inrae.fr |
+| **Laboratory / Host Institution** | INRAE-USMB UMR CARRTEL |
+| **License** | MIT License (see file `LICENSE`) |
+| **Website** | *to be completed* |
+| **Source code** | *to be completed (URL of the repository)* |
+| **Scientific domain** | Hydroacoustics, Aquatic ecology, Limnology |
+| **Key functionalities** | Processing of FishTracker and Sonar5 data, Concordance Correlation Coefficient (CCC) analysis, Bland‑Altman plots, Wind‑condition analysis |
 | **Technologies** | R, RStudio |
-| **Mots-clés** | Fish counting, acoustic camera, FishTracker, Sonar5, CCC, Bland-Altman |
+| **Keywords** | Fish counting, acoustic camera, FishTracker, Sonar5, CCC, Bland‑Altman |
 
-## 2. Contexte et historique / Context & History
+---
 
-### Historique
-- Matériel préparatoire : Scripts originaux d'analyse de données d'hydroacoustique.
-- Versions précédentes : Première version stable de publication.
-- Composants intégrés et dépendances : Utilisation de packages R open-source (`ggplot2`, `dplyr`, `epiR`, `openair`, etc.).
-- Feuille de route / Roadmap : [À compléter]
-- Logiciels équivalents : [À compléter]
+## 2. Context & History  
 
-### Projet(s) lié(s)
-- **Publication de référence** : Godeaux, Q., Rogissart, H., Rautureau, C., Martignac, F., Cattanéo, F., & Guillard, J. (2026). Comparative evaluation of two automated fish counting software tools using acoustic camera data.
+### History  
 
-## 3. Objectifs / Objectives
+- **Pre‑processing**: Original scripts for hydroacoustic data analysis.  
+- **Previous releases**: First stable version published.  
+- **Integrated components & dependencies**: Uses open‑source R packages `ggplot2`, `dplyr`, `epiR`, `openair`, etc.  
+- **Roadmap**: *to be completed*  
+- **Equivalent software**: *to be completed*  
 
-### Objectifs scientifiques
-Évaluer comparativement deux logiciels de comptage automatique de poissons (FishTracker et Sonar5) sur des données de caméras acoustiques (campagnes 2020-2021 et 2023-2024). L'évaluation se base sur des méthodes statistiques de concordance (Concordance Correlation Coefficients - CCC, diagrammes de Bland-Altman) et intègre l'impact des conditions environnementales, notamment le vent, sur la fiabilité des détections.
+### Related projects  
 
-### Objectifs d'utilisation et de diffusion
-- Durée de vie prévue : [À compléter]
-- Utilisation prévue : Reproductibilité scientifique des résultats de l'article (Godeaux et al., 2026).
-- Public cible : Chercheurs en écologie, ingénieurs en hydroacoustique, communauté scientifique.
-- Objectifs de diffusion : Open science, publication d'un dépôt de recherche garantissant la transparence.
-- Communauté de collaboration souhaitée : Oui
-- Préservation : Dépôt sur un entrepôt de données pérenne (ex: Zenodo) recommandé.
+- **Reference publication**: Godeaux, Q., Rogissart, H., Rautureau, C., Martignac, F., Cattanéo, F., & Guillard, J. (2026). *Comparative evaluation of two automated fish counting software tools using acoustic camera data*.
 
-## 4. Caractéristiques techniques / Technical Features
+---
 
-- **Technologies utilisées** : Langage R.
-- **Dépendances** :
-  - R installé localement.
-  - Connexion Internet (lors de la première exécution) pour l'installation automatique des packages manquants.
-  - Packages R : `ggplot2`, `dplyr`, `tidyr`, `lubridate`, `scales`, `DescTools`, `epiR`, `patchwork`, `openair`.
-- **Réutilisation de briques existantes** : L'écosystème Tidyverse et le package `epiR` pour les statistiques épidémiologiques.
-- **Contraintes techniques** : Le script utilise des chemins relatifs. Évitez de déplacer ou renommer les fichiers bruts ou les sous-dossiers de données sans ajuster le script.
+## 3. Objectives  
 
-## 5. Installation et utilisation / Installation & Usage
+### Scientific objectives  
 
-### Repository layout
-This repository contains the R workflow and associated folders.
-```text
+Evaluate, in a comparative manner, two automatic fish‑counting tools (FishTracker and Sonar5) on acoustic‑camera datasets collected during the 2020‑2021 and 2023‑2024 campaigns. The assessment is based on statistical concordance methods (Concordance Correlation Coefficient – CCC, Bland‑Altman diagrams) and incorporates the influence of environmental variables, notably wind, on detection reliability.
+
+### Usage & dissemination objectives  
+
+- **Planned lifespan**: *to be completed*  
+- **Intended use**: Reproducibility of the results presented in the article (Godeaux et al., 2026).  
+- **Target audience**: Researchers in ecology, hydroacoustic engineers, the broader scientific community.  
+- **Dissemination goals**: Promote open science; provide a research‑data deposit ensuring transparency.  
+- **Collaboration community**: Yes.  
+- **Preservation**: Deposition in a long‑term repository (e.g., Zenodo) is recommended.
+
+---
+
+## 4. Technical Features  
+
+- **Technologies**: R language.  
+- **Dependencies**:  
+  - Local R installation.  
+  - Internet connection (required only for the first execution to install missing packages).  
+  - R packages: `ggplot2`, `dplyr`, `tidyr`, `lubridate`, `scales`, `DescTools`, `epiR`, `patchwork`, `openair`.  
+- **Reuse of existing blocks**: Tidyverse ecosystem and the `epiR` package for epidemiological statistics.  
+- **Technical constraints**: The script relies on relative file paths; moving or renaming raw data folders/files without updating the script will cause errors.
+
+---
+
+## 5. Installation & Usage  
+
+### Repository layout  
+
+```
 Godeaux_et_al._2026/
   Code_and_data/
     FishTracker_workflow.R
@@ -70,80 +83,107 @@ Godeaux_et_al._2026/
   Subset.zip
 ```
 
-### Input data
-The workflow expects the raw files to stay in these folders:
-- `Code_and_data/data/Survey 2020/`
+### Input data  
+
+The workflow expects the raw files to remain in the following locations:
+
+- `Code_and_data/data/Survey 2020/`  
 - `Code_and_data/data/Survey 2023/`
 
-Important files include:
-- `Code_and_data/data/Survey 2020/CSOT_2020-12-15_merged.txt`
-- `Code_and_data/data/Survey 2020/comparaison_work_HV.txt`
-- `Code_and_data/data/Survey 2020/climatik-request-3156645`
-- `Code_and_data/data/Survey 2020/data_ccc_technical_note_op1_op2.txt`
-- `Code_and_data/data/Survey 2023/CSOT_merged_exportTortSpee.txt`
-- `Code_and_data/data/Survey 2023/data_2023_2024_S5(Last).txt`
-- `Code_and_data/data/Survey 2023/data_2023_2024_combined_cleaning_manuel(Last).txt`
+Key files include:
+
+- `Code_and_data/data/Survey 2020/CSOT_2020-12-15_merged.txt`  
+- `Code_and_data/data/Survey 2020/comparaison_work_HV.txt`  
+- `Code_and_data/data/Survey 2020/climatik-request-3156645`  
+- `Code_and_data/data/Survey 2020/data_ccc_technical_note_op1_op2.txt`  
+- `Code_and_data/data/Survey 2023/CSOT_merged_exportTortSpee.txt`  
+- `Code_and_data/data/Survey 2023/data_2023_2024_S5(Last).txt`  
+- `Code_and_data/data/Survey 2023/data_2023_2024_combined_cleaning_manuel(Last).txt`  
 - `Code_and_data/data/Survey 2023/ClimatiK 12-24_12_2023/Vent_2023.txt`
 
-> **Note**: If one of these files is missing, the script stops with a clear error message. If you rename one of the raw files, update the corresponding path in `FishTracker_workflow.R`.
+> **Note**: If a required file is absent, the script aborts with a clear error message. When renaming a raw file, update the corresponding path inside `FishTracker_workflow.R`.
 
-The workflow processes both seasons: 2020-2021 and 2023-2024.
+The workflow processes both seasons (2020‑2021 and 2023‑2024).
 
-### How to run
+### How to run  
 
-**Option A : In RStudio**
-1. Open the repository in RStudio.
-2. Open `Code_and_data/FishTracker_workflow.R`.
-3. Click `Source` or run the script.
+#### Option A – In RStudio  
 
-**Option B : In the R console**
-From the repository root, run the script in R.
-If the script is launched from another folder, it will try to locate the repository automatically.
+1. Open the repository in RStudio.  
+2. Open `Code_and_data/FishTracker_workflow.R`.  
+3. Click **Source** or execute the script line by line.
 
-### Outputs
-Figures are written to the `Outputs/` directory. The folder is created automatically if it does not already exist.
+#### Option B – In the R console  
 
-### Troubleshooting
-- **Missing package**: rerun the script and let it install the required package.
-- **File not found**: check that the raw data folders and filenames match the structure above.
-- **No output created**: make sure the script finished without an error and that the `Outputs/` folder is writable.
+From the repository root, run:
 
-## 6. Organisation de l'équipe et du développement / Team & Development Organisation
+```r
+source("Code_and_data/FishTracker_workflow.R")
+```
 
-### Gouvernance
-- Organisme responsable : [À compléter]
+If the script is launched from another directory, it will attempt to locate the repository automatically.
 
-### Équipe
-- Membres (Auteurs de l'étude) : Quentin Godeaux, Hervé Rogissart, Clément Rautureau, François Martignac, Franck Cattanéo, Jean Guillard.
+### Outputs  
 
-### Organisation du développement
-- Méthodes et outils : Script d'analyse (standalone).
-- Gestion des versions : Git / GitHub ou GitLab local.
-- Documentation : Markdown et commentaires exhaustifs au sein du code R.
+Figures are saved in the `Outputs/` directory, which is created automatically if it does not already exist.
 
-## 7. Diffusion et citation / Distribution & Citation
+### Troubleshooting  
 
-### Dépôt de référence
-- URL du dépôt principal : [À compléter]
-- Identifiant pérenne (DOI) : [À compléter]
-
-### Citation
-> Godeaux, Q., Rogissart, H., Rautureau, C., Martignac, F., Cattanéo, F., & Guillard, J. (2026). Comparative evaluation of two automated fish counting software tools using acoustic camera data. [À compléter avec le nom de la revue/journal et le DOI].
-
-### Subset availability
-The data subset can be found in the repository’s releases section under the name “Subset – Version 1.0” (File `Subset.zip` is available in the root).
-
-## 8. Gestion du Plan de Gestion de Logiciel / SMP Management
-
-- Responsable du SMP : [À compléter]
-- Fréquence de mise à jour : À l'occasion de la publication de l'article ou de mises à jour majeures du jeu de données.
-- Lien avec le DMP (Data Management Plan) : [À compléter]
-
-## 9. Licences et propriété intellectuelle / Legal & IP
-
-- Auteurs et détenteurs des droits : Quentin Godeaux, Hervé Rogissart, Clément Rautureau, François Martignac, Franck Cattanéo, Jean Guillard.
-- Licence du code : **MIT License** (permet une réutilisation large et ouverte, idéale pour les scripts accompagnant une publication).
-- Date d'ouverture prévue : Immédiate lors de la publication.
+- **Missing package**: Re‑run the script; it will install the required package automatically.  
+- **File not found**: Verify that the raw‑data directories and file names match the structure described above.  
+- **No output generated**: Ensure the script terminated without error and that the `Outputs/` folder has write permissions.
 
 ---
-*Ce README est structuré selon le Modèle de Plan de Gestion de Logiciel de la Recherche – Projet PRESOFT V3.2 (CNRS/IN2P3, 2018).*
+
+## 6. Team & Development  
+
+### Governance  
+
+- **Responsible institution**: INRAE-USMB UMR CARRTEL 
+
+### Team members (authors of the study)  
+
+Quentin Godeaux, Hervé Rogissart, Clément Rautureau, François Martignac, Franck Cattanéo, Jean Guillard.
+
+### Development organisation  
+
+- **Methods & tools**: Stand‑alone analysis script.  
+- **Version control**: Git / GitHub or GitLab (local).  
+- **Documentation**: Markdown files and extensive in‑code comments.
+
+---
+
+## 7. Distribution & Citation  
+
+### Reference repository  
+
+- **Main URL**: *to be completed*  
+- **Persistent identifier (DOI)**: *to be completed*  
+
+### Recommended citation  
+
+> Godeaux, Q., Rogissart, H., Rautureau, C., Martignac, F., Cattanéo, F., & Guillard, J. (2026). *Comparative evaluation of two automated fish counting software tools using acoustic camera data*. *[Journal name]*, DOI *xxxx*.
+
+### Subset availability  
+
+A reduced data set is provided in the repository’s *Releases* section under the name “Subset – Version 1.0” (file `Subset.zip`).
+
+---
+
+## 8. Software Management Plan (SMP)  
+
+- **SMP manager**: *to be completed*  
+- **Update frequency**: At the time of article publication or when major data‑set updates occur.  
+- **Link to Data Management Plan (DMP)**: *to be completed*  
+
+---
+
+## 9. Legal & IP  
+
+- **Authors / Rights holders**: Quentin Godeaux, Hervé Rogissart, Clément Rautureau, François Martignac, Franck Cattanéo, Jean Guillard.  
+- **Code license**: **MIT License** – permits broad reuse, suitable for scripts accompanying a scientific publication.  
+- **Planned opening date**: Immediately upon publication.   [1]
+
+---
+
+*This README is structured according to the Research Software Management Plan Template, PRESOFT Project V3.2 (CNRS/IN2P3, 2018).*
