@@ -167,7 +167,7 @@ Quentin Godeaux, Hervé Rogissart, Clément Rautureau, François Martign
 ### Subset availability  
 
 A reduced data set (.aris files) is provided in the repository’s *Releases* section under the name “Subset – Version 1.0” (file `Subset.zip`).
-
+(https://github.com/Github-Carrtel/Godeaux_et_al._2026/releases/tag/v1.0)
 ---
 
 ## 8. Software Management Plan (SMP)  
