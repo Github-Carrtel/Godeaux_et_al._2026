@@ -35,7 +35,7 @@
 
 ### Related projects  
 
-- **Reference publication**: Godeaux, Q., Rogissart, H., Rautureau, C., Martignac, F., Cattanéo, F., & Guillard, J. (2026). *Comparative evaluation of two automated fish counting software tools using acoustic camera data*.
+- **Reference publication**:  Godeaux, Quentin, Hervé Rogissart, Clément Rautureau, François Martignac, Franck Cattanéo, et Jean Guillard. *Comparative evaluation of two automated fish counting software tools using acoustic camera data *. Ecological Informatics 97 (août 2026): 103904. https://doi.org/10.1016/j.ecoinf.2026.103904.
 
 ---
 
@@ -157,12 +157,12 @@ Quentin Godeaux, Hervé Rogissart, Clément Rautureau, François Martign
 
 ### Reference repository  
 
-- **Main URL**: *to be completed*  
-- **Persistent identifier (DOI)**: *to be completed*  
+- **Main URL**: https://github.com/Github-Carrtel/Godeaux_et_al._2026/
+- **Persistent identifier (DOI)**: https://doi.org/10.1016/j.ecoinf.2026.103904
 
 ### Recommended citation  
 
-> Godeaux, Q., Rogissart, H., Rautureau, C., Martignac, F., Cattanéo, F., & Guillard, J. (2026). *Comparative evaluation of two automated fish counting software tools using acoustic camera data*. *[Journal name]*, DOI *xxxx*.
+> Godeaux, Quentin, Hervé Rogissart, Clément Rautureau, François Martignac, Franck Cattanéo, et Jean Guillard.(2026).« Comparative evaluation of two automated fish counting software tools using acoustic camera data ». Ecological Informatics 97: 103904. https://doi.org/10.1016/j.ecoinf.2026.103904.
 
 ### Subset availability  
 
@@ -171,9 +171,9 @@ Quentin Godeaux, Hervé Rogissart, Clément Rautureau, François Martign
 
 ## 8. Software Management Plan (SMP)  
 
-- **SMP manager**: *to be completed*  
+- **SMP manager**: 
 - **Update frequency**: At the time of article publication or when major data‑set updates occur.  
-- **Link to Data Management Plan (DMP)**: *to be completed*  
+- **Link to Data Management Plan (DMP)**:   
 
 ---
 
